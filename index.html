@@ -6,8 +6,52 @@
         <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
         <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
         <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script type="text/javascript">
+            var CountAPI =
+            {
+                create: function(t)
+                {
+                    let url = 'https://api.countapi.xyz/create?namespace=qaqwqaqwq-0.github.io&key=' + t + '&value=0';
+                    return $.getJSON(url);
+                },
+                hit: function(t)
+                {
+                    let url = 'https://api.countapi.xyz/hit/qaqwqaqwq-0.github.io/' + t;
+                    return $.getJSON(url);
+                },
+                set: function(t, v)
+                {
+                    let url = 'https://api.countapi.xyz/set/qaqwqaqwq-0.github.io/' + t + '?value=' + v;
+                    return $.getJSON(url);
+                },
+                update: function(t, v)
+                {
+                    let url = 'https://api.countapi.xyz/update/qaqwqaqwq-0.github.io/' + t + '?amount=' + v;
+                    return $.getJSON(url);
+                }
+            };
+        </script>
     </head>
     <body>
-        Welcome to my page!
+        <strong>Welcome to my page! You're the <span id="visits">?th</span> visitor of this website!</strong>
+        <script type="text/javascript">
+            $(document).ready(function()
+            {
+                CountAPI.hit('visits').then(function(r)
+                {
+                    let v = r.value;
+                    let upd = '';
+                    if(v == 1)
+                        upd = '1st';
+                    else if(v == 2)
+                        upd = '2nd';
+                    else if(v == 3)
+                        upd = '3rd';
+                    else
+                        upd = v + 'th';
+                    $("#visits").text(upd);
+                });
+            });
+        </script>
     </body>
 </html>
