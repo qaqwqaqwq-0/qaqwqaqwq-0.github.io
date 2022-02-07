@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Rick Zhou</title>
+        <title>Rick Zhou's Main Page</title>
+        <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="normalize.css">
         <link type="favicon" rel="icon" href="favicon.ico">
         <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
         <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
@@ -33,7 +35,6 @@
         </script>
     </head>
     <body>
-        <strong>Welcome to my page! You're the <span id="visits">?th</span> visitor of this website!</strong>
         <script type="text/javascript">
             $(document).ready(function()
             {
@@ -41,17 +42,24 @@
                 {
                     let v = r.value;
                     let upd = '';
-                    if(v == 1)
-                        upd = '1st';
-                    else if(v == 2)
-                        upd = '2nd';
-                    else if(v == 3)
-                        upd = '3rd';
+                    if(v % 10 == 1)
+                        upd = 'st';
+                    else if(v % 10 == 2)
+                        upd = 'nd';
+                    else if(v % 10 == 3)
+                        upd = 'rd';
                     else
-                        upd = v + 'th';
-                    $("#visits").text(upd);
+                        upd = 'th';
+                    $("#visits").text(v + upd);
                 });
             });
         </script>
+        <img id="major-bg-img" src="background.jpg">
+        <div class="container">
+            <div id="welcome">
+                <span style="color: #25caf3; font-size: 45px; text-shadow: 0 0 5px white;">Welcome to my page!</span><br/>
+                <span style="color: #a0a0a0; font-size: 30px; text-shadow: 0 0 3px white;">You're the <span id="visits" style="color: brown">?th</span> visitor of this website!</span>
+            </div>
+        </div>
     </body>
 </html>
