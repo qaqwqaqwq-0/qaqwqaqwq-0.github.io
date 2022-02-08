@@ -13,6 +13,9 @@ Why is CSS so disgusting!!!
     border: none;
     box-shadow: none;
     border-radius: 0;
+    position: fixed;
+    float: left;
+    width: 100%;
 }
 
 .navbar-default .navbar-nav > li > a
@@ -38,7 +41,7 @@ Why is CSS so disgusting!!!
 #major-bg-img
 {
     display: block;
-    position: absolute;
+    position: fixed;
     background: url(../img/background.jpg) center;
     background-size: cover;
     width: 100%;
