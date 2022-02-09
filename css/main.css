@@ -2,6 +2,8 @@
 
 main.css - qaqwqaqwq-0.github.io
 
+Author: Rick Zhou / Zhou Runyu
+
 Why is CSS so disgusting!!!
 
 */
@@ -34,7 +36,7 @@ Why is CSS so disgusting!!!
 .small-logo
 {
     height: 100%;
-    display: block;
+    display: inline-block;
     box-shadow: 0 0 5px white;
     background-color: #187be6;
     border-radius: 50%;
@@ -67,7 +69,7 @@ Why is CSS so disgusting!!!
 
 #brief-intro
 {
-    font-size: 24px;
+    font-size: 26px;
 }
 
 div#accounts-intro > div > svg
@@ -180,7 +182,7 @@ img#ZHPD-img
     transition: all 0.3s;
 }
 
-.zhpd-download-button:hover span::before
+.zhpd-download-button:hover > span::before
 {
     transform: translate(-50%, -50%) rotate(-90deg);
     width: 100%;
@@ -192,7 +194,7 @@ img#ZHPD-img
     color: white;
 }
 
-.zhpd-download-button:active span::before
+.zhpd-download-button:active > span::before
 {
     background: #2751cd;
 }
