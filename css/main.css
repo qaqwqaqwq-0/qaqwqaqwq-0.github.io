@@ -16,6 +16,7 @@ Why is CSS so disgusting!!!
     position: fixed;
     float: left;
     width: 100%;
+    top: 0;
 }
 
 .navbar-default .navbar-nav > li > a
@@ -36,6 +37,7 @@ Why is CSS so disgusting!!!
     display: block;
     box-shadow: 0 0 5px white;
     background-color: #187be6;
+    border-radius: 50%;
 }
 
 #major-bg-img
@@ -54,8 +56,143 @@ Why is CSS so disgusting!!!
 #welcome
 {
     font-family: 'Malgun Gothic', 'Segoe UI', sans-serif;
-    margin: 0 auto;
-    margin-top: 25%;
-    background-color: rgba(170, 223, 248, 0.6);
     text-align: center;
+}
+
+#personal-info
+{
+    margin-top: 10%;
+    font-family: "Segoe UI", sans-serif;
+}
+
+#brief-intro
+{
+    font-size: 24px;
+}
+
+div#accounts-intro > div > svg
+{
+    margin-right: 7px;
+    transform: translateY(4px);
+}
+
+div#accounts-intro > div > span
+{
+    font-size: 15px;
+}
+
+div#accounts-intro > div
+{
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+hr#hr-1
+{
+    border-color: blue;
+}
+
+#ZHPD-intro
+{
+    margin-top: 7%;
+    border: 1px solid grey;
+    border-radius: 5px;
+    font-family: 'Segoe UI', sans-serif;
+    padding: 30px 0;
+}
+
+#ZHPD-intro-attraction
+{
+    font-size: 20px;
+    text-shadow: 0 0 2px white;
+    padding-left: 5%;
+    margin-bottom: 3%;
+}
+
+/* div#ZHPD-intro > div#ZHPD-text
+{
+    font-size: 45px;
+    color: rgb(58, 110, 255);
+    text-shadow: 0 0 7px yellow;
+}
+
+div#ZHPD-img-wrapper
+{
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+img#ZHPD-img
+{
+    width: 100%;
+} */
+
+.zhpd-download-button
+{
+    border: none;
+    display: block;
+    position: relative;
+    padding: 0.7em 2.4em;
+    font-size: 18px;
+    background: transparent;
+    cursor: pointer;
+    user-select: none;
+    overflow: hidden;
+    color: royalblue;
+    z-index: 1;
+    font-family: inherit;
+    font-weight: 500;
+    margin: 0 auto;
+}
+
+.zhpd-download-button > svg
+{
+    margin-right: 8px;
+    transform: translateY(5px);
+}
+
+.zhpd-download-button > span
+{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    z-index: -1;
+    border: 4px solid royalblue;
+}
+
+.zhpd-download-button > span::before
+{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 8%;
+    height: 500%;
+    background: transparent;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-60deg);
+    transition: all 0.3s;
+}
+
+.zhpd-download-button:hover span::before
+{
+    transform: translate(-50%, -50%) rotate(-90deg);
+    width: 100%;
+    background: royalblue;
+}
+
+.zhpd-download-button:hover
+{
+    color: white;
+}
+
+.zhpd-download-button:active span::before
+{
+    background: #2751cd;
 }
