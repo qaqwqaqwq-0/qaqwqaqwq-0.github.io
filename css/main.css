@@ -61,6 +61,29 @@ Why is CSS so disgusting!!!
     text-align: center;
 }
 
+#welcome-1
+{
+    font-size: 45px;
+}
+
+#welcome-2
+{
+    font-size: 30px;
+}
+
+@media (max-width: 768px)
+{
+    #welcome-1
+    {
+        font-size: 30px;
+    }
+
+    #welcome-2
+    {
+        font-size: 20px;
+    }
+}
+
 #personal-info
 {
     margin-top: 10%;
@@ -70,6 +93,14 @@ Why is CSS so disgusting!!!
 #brief-intro
 {
     font-size: 26px;
+}
+
+@media (max-width: 768px)
+{
+    #brief-intro
+    {
+        font-size: 20px;
+    }
 }
 
 div#accounts-intro > div > svg
@@ -100,7 +131,7 @@ hr#hr-1
     border: 1px solid grey;
     border-radius: 5px;
     font-family: 'Segoe UI', sans-serif;
-    padding: 30px 0;
+    padding: 3% 0;
 }
 
 #ZHPD-intro-attraction
@@ -109,6 +140,14 @@ hr#hr-1
     text-shadow: 0 0 2px white;
     padding-left: 5%;
     margin-bottom: 3%;
+}
+
+@media (max-width: 768px)
+{
+    #ZHPD-intro-attraction
+    {
+        font-size: 16px;
+    }
 }
 
 /* div#ZHPD-intro > div#ZHPD-text
