@@ -39,6 +39,11 @@
                 {
                     let url = 'https://api.countapi.xyz/update/qaqwqaqwq-0.github.io/' + t + '?amount=' + v;
                     return $.getJSON(url);
+                },
+                get: function(t)
+                {
+                    let url = 'https://api.countapi.xyz/get/qaqwqaqwq-0.github.io/' + t;
+                    return $.getJSON(url);
                 }
             };
             function zhpd()
