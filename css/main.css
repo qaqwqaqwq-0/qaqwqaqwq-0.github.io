@@ -8,6 +8,12 @@
 
 */
 
+/*-------------------------------------------------
+
+    CSS for index.html
+
+-------------------------------------------------*/
+
 .rick-nav
 {
     background-color: #1a79c4;
@@ -236,4 +242,17 @@ img#ZHPD-img
 .zhpd-download-button:active > span::before
 {
     background: #2751cd;
+}
+
+/*-------------------------------------------------
+
+    CSS for softwares.html
+
+-------------------------------------------------*/
+
+.sft-main
+{
+    margin-top: 50px;
+    margin-left: 2%;
+    margin-right: 2%;
 }

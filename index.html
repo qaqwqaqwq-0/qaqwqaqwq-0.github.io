@@ -4,11 +4,8 @@
         <meta charset="UTF-8">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
         <title>Rick Zhou's Main Page</title>
-        <!-- <link rel="stylesheet" href="amis/sdk.min.css"> -->
-        <!-- <link rel="stylesheet" href="amis/helper.min.css"> -->
-        <!-- <link rel="stylesheet" href="amis/iconfont.css"> -->
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/hover.css">
         <!-- <link rel="stylesheet" href="css/buttons.css"> -->
@@ -17,57 +14,7 @@
         <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
         <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="css/main.css">
-        <script type="text/javascript">
-            var CountAPI =
-            {
-                keys:
-                [
-                    "visits",
-                    "zhpd"
-                ],
-                create: function(t)
-                {
-                    let url = 'https://api.countapi.xyz/create?namespace=qaqwqaqwq-0.github.io&key=' + t + '&value=0';
-                    return $.getJSON(url);
-                },
-                hit: function(t)
-                {
-                    let url = 'https://api.countapi.xyz/hit/qaqwqaqwq-0.github.io/' + t;
-                    return $.getJSON(url);
-                },
-                set: function(t, v)
-                {
-                    let url = 'https://api.countapi.xyz/set/qaqwqaqwq-0.github.io/' + t + '?value=' + v;
-                    return $.getJSON(url);
-                },
-                update: function(t, v)
-                {
-                    let url = 'https://api.countapi.xyz/update/qaqwqaqwq-0.github.io/' + t + '?amount=' + v;
-                    return $.getJSON(url);
-                },
-                get: function(t)
-                {
-                    let url = 'https://api.countapi.xyz/get/qaqwqaqwq-0.github.io/' + t;
-                    return $.getJSON(url);
-                }
-            };
-            function zhpd()
-            {
-                CountAPI.hit('zhpd');
-            }
-        </script>
-        <style>
-            html, body, .app-wrapper
-            {
-                position: relative;
-                width: 100%;
-                height: 100%;
-                margin: 0;
-                padding: 0;
-                top: 0%;
-                left: 0%;
-            }
-        </style>
+        <script type="text/javascript" src="js/countapi.js"></script>
     </head>
     <body>
         <script type="text/javascript">
@@ -184,24 +131,5 @@
                 </div>
             </div>
         </main>
-        <!-- <div id="amis">
-            <div id="root" class="app-wrapper"></div>
-            <script src="amis/sdk.js"></script>
-            <script type="text/javascript">
-                function LoadAmis()
-                {
-                    let amis = amisRequire('amis/embed');
-                    let AmisJSON =
-                    {
-                        type: 'page',
-                        body:
-                        {
-                        }
-                    };
-                    let amisScoped = amis.embed('#root', AmisJSON);
-                }
-                // LoadAmis();
-            </script>
-        </div> -->
     </body>
 </html>
