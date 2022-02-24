@@ -10,6 +10,18 @@
 
 /*-------------------------------------------------
 
+    General Configuration
+
+-------------------------------------------------*/
+
+@font-face
+{
+    font-family: QS;
+    src: url(../fonts/Quicksand-Regular.ttf);
+}
+
+/*-------------------------------------------------
+
     CSS for index.html
 
 -------------------------------------------------*/
@@ -31,7 +43,7 @@
 {
     color: #00e0ff;
     font-size: 20px;
-    font-family: 'QuickSand', Arial, sans-serif;
+    font-family: QS, Arial, sans-serif;
 }
 
 .navbar-default .navbar-nav > li > a:hover
@@ -156,27 +168,6 @@ hr#hr-1
     }
 }
 
-/* div#ZHPD-intro > div#ZHPD-text
-{
-    font-size: 45px;
-    color: rgb(58, 110, 255);
-    text-shadow: 0 0 7px yellow;
-}
-
-div#ZHPD-img-wrapper
-{
-    width: 80%;
-    margin-left: 10%;
-    margin-right: 10%;
-    margin-top: 1%;
-    margin-bottom: 1%;
-}
-
-img#ZHPD-img
-{
-    width: 100%;
-} */
-
 .zhpd-download-button
 {
     border: none;
@@ -250,9 +241,63 @@ img#ZHPD-img
 
 -------------------------------------------------*/
 
+.solid-nav
+{
+    background-color: #4894d0;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    position: fixed;
+    float: left;
+    width: 100%;
+    top: 0;
+}
+
+.font-qs
+{
+    font-family: QS, sans-serif;
+}
+
 .sft-main
 {
     margin-top: 50px;
-    margin-left: 2%;
-    margin-right: 2%;
+}
+
+#sft-main-title
+{
+    color: #068bf3;
+    font-size: 2.5em;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+#sft-content > section
+{
+    height: 70vh;
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-bottom: 2%;
+}
+
+#sft-sec-zhpd
+{
+    background-color: #eff8ff;
+}
+
+.sft-software-name
+{
+    font-size: 1.7em;
+    padding: 2.5% 0%;
+}
+
+.sft-img-display
+{
+    display: inline-block;
+    width: 50%;
+}
+
+.sft-description
+{
+    display: inline-block;
+    width: 50%;
 }

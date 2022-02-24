@@ -4,12 +4,8 @@
         <meta charset="UTF-8">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
         <title>Rick Zhou's Softwares</title>
         <link type="favicon" rel="icon" href="img/favicon.ico">
-        <link rel="stylesheet" href="amis/sdk.min.css">
-        <link rel="stylesheet" href="amis/helper.min.css">
-        <link rel="stylesheet" href="amis/iconfont.css">
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/hover.css">
         <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
@@ -17,21 +13,9 @@
         <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script src="js/countapi.js"></script>
         <link rel="stylesheet" href="css/main.css">
-        <style>
-            html, body, .app-wrapper
-            {
-                position: relative;
-                width: 100%;
-                height: 100%;
-                margin: 0;
-                padding: 0;
-                top: 0%;
-                left: 0%;
-            }
-        </style>
     </head>
     <body>
-        <nav class="rick-nav navbar-default navbar" role="navigation">
+        <nav class="solid-nav navbar-default navbar" role="navigation">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#btn-collapse" aria-expanded="false"
@@ -55,89 +39,21 @@
             </div>
         </nav>
         <main class="sft-main">
-            <div id="amis">
-                <div id="root" class="app-wrapper"></div>
-                <script src="amis/sdk.js"></script>
-                <script type="text/javascript">
-                    var config =
-                    {
-                        font:
-                        {
-                            font_size_base_px: 20,
-                            validate_css_vars: function()
-                            {
-                                let s = '--fontSize';
-                                let t =
-                                [
-                                    ['Base', 1],
-                                    ['Md', 1],
-                                    ['Lg', 1.142857],
-                                    ['Xl', 1.42857],
-                                    ['Sm', .857],
-                                    ['Xs', .7857]
-                                ];
-                                let r = {};
-                                for(let i = 0; i < t.length; ++i)
-                                {
-                                    u = t[i];
-                                    r[s + u[0]] = u[1] *
-                                        this.font_size_base_px + 'px';
-                                }
-                                return r;
-                            }
-                        }
-                    };
-                    var AmisJSON = {};
-                    (function LoadAmis()
-                    {
-                        let amis = amisRequire('amis/embed');
-                        AmisJSON =
-                        {
-                            type: 'page',
-                            cssVars: config.font.validate_css_vars(),
-                            body:
-                            [
-                                {
-                                    type: 'html',
-                                    html: '<div><span style="font-size: 30px; font-family: \'QuickSand\', sans-serif; color: #068bf3;">Rick Zhou\'s Softwares</span></div>'
-                                },
-                                {
-                                    type: 'table-view',
-                                    trs:
-                                    [
-                                        {
-                                            tds:
-                                            [
-                                                {
-                                                    type: 'tpl',
-                                                    body: 'ZHPD'
-                                                },
-                                                // {
-                                                //     type: 'carousel',
-                                                //     auto: true,
-                                                //     thumbMode: 'cover',
-                                                //     animation: 'slide',
-                                                //     options:
-                                                //     [
-                                                //         {
-                                                //             type: 'tpl',
-                                                //             body: '1'
-                                                //         },
-                                                //         {
-                                                //             type: 'tpl',
-                                                //             body: '2'
-                                                //         }
-                                                //     ]
-                                                // },
-                                            ]
-                                        }
-                                    ]
-                                }
-                            ]
-                        };
-                        let amisScoped = amis.embed('#root', AmisJSON);
-                    })();
-                </script>
+            <div id="sft-main-title" class="text-center font-qs">
+                <span>Rick Zhou's Softwares</span>
+            </div>
+            <div id="sft-content">
+                <section id="sft-sec-zhpd">
+                    <div class="sft-software-name font-qs text-center">
+                        <span>ZHPD (ZRY HTTP Parallel Downloader)</span>
+                    </div>
+                    <div class="sft-img-display">
+                        <img src="img/zhpd.jpg" title="ZHPD" alt="ZHPD">
+                    </div>
+                    <div class="sft-description font-qs">
+                        Fast Download
+                    </div>
+                </section>
             </div>
         </main>
     </body>
