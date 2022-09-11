@@ -1,0 +1,77 @@
+#div-left
+{
+    width: 60vw;
+    height: 96vh;
+    padding: 1vh 1vh;
+    float: left;
+}
+
+#div-right
+{
+    float: left;
+    padding: 1vh 1vh;
+    width: auto;
+}
+
+#div-right > div, .wrap-class > div, .add-number-class > div, .atilx-class > div
+{
+    padding: 10px 10px;
+}
+
+.border1
+{
+    border: 1px lightgreen solid;
+    border-radius: 3px;
+    float: right;
+    padding: 3px 3px;
+    margin-left: 5px;
+}
+
+.border1 > input
+{
+    width: 100px;
+}
+
+.btnclass1
+{
+    display: inline-block;
+}
+
+.inputclass1
+{
+    display: inline-block;
+    width: 160px;
+}
+
+#replace-input-2
+{
+    display: inline-block;
+    overflow-x: hidden;
+}
+
+.add-number-class
+{
+    border: 2px solid greenyellow;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.wrap-class
+{
+    border: 2px solid cyan;
+    border-radius: 10px;
+    padding: 20px 20px;
+    margin-bottom: 10px;
+}
+
+.atilx-class
+{
+    border: 2px solid rgb(131, 131, 24);
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.wrap-class > div > h5
+{
+    margin: 0 0;
+}

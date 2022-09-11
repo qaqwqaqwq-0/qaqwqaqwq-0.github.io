@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="gb2312">
+        <link rel="stylesheet" href="normalize.css">
+        <link rel="stylesheet" href="textman.css">
+        <link rel="stylesheet" href="codemirror(modified).css">
+        <script type="text/javascript" src="jquery.min.js"></script>
+        <script type="text/javascript" src="codemirror.js"></script>
+        <script type="text/javascript" src="textman.js"></script>
+        <title>Text Manager</title>
+    </head>
+    <body>
+        <div id="div-left">
+            <textarea id="text"></textarea>
+        </div>
+        <div id="div-right">
+            <div>
+                <button type="button" class="btnclass1" onclick="do_copy()">copy all</button>
+            </div>
+            <div>
+                <button type="button" class="btnclass1" onclick="trim_left()">trim left</button>
+                <button type="button" class="btnclass1" onclick="trim_right()">trim right</button>
+                <input id="trim-input" class="inputclass1" type="number" value="1">
+            </div>
+            <div>
+                <button type="button" class="btnclass1" onclick="trim_until_left()">trim until (left)</button>
+                <button type="button" class="btnclass1" onclick="trim_until_right()">trim until (right)</button>
+                <input id="trim-until-input" class="inputclass1" type="text" value=".">
+            </div>
+            <div>
+                <button type="button" class="btnclass1" onclick="trim_whitespace_left()">trim whitespace (left)</button>
+                <button type="button" class="btnclass1" onclick="trim_whitespace_right()">trim whitespace (right)</button>
+            </div>
+            <div>
+                <button type="button" class="btnclass1" onclick="remove_empty_lines()">remove empty lines</button>
+                <button type="button" class="btnclass1" onclick="in_one_line()">in one line</button>
+            </div>
+            <div>
+                <button type="button" class="btnclass1" onclick="tidy_up()">remove single '\n' and replace '\n\n' to '\n'</button>
+            </div>
+            <div>
+                <button type="button" class="btnclass1" onclick="do_replace()">replace</button>
+                <input id="replace-input-1" class="inputclass1">
+                <span>to</span>
+                <textarea id="replace-input-2" rows="1" cols="15" wrap="off"></textarea>
+                <label>
+                    <input id="replace-cb" type="checkbox" value="">
+                    re
+                </label>
+            </div>
+            <div>
+                <button type="button" class="btnclass1" onclick="add_to_left()">add to left</button>
+                <button type="button" class="btnclass1" onclick="add_to_right()">add to right</button>
+                <input id="add-input" class="inputclass1">
+            </div>
+            <div class="add-number-class">
+                <div>
+                    <button type="button" class="btnclass1" onclick="add_number_to_left()">add number to left</button>
+                    <button type="button" class="btnclass1" onclick="add_number_to_right()">add number to right</button>
+                </div>
+                <div>
+                    <input id="add-number-input" class="inputclass1" value="x. ">
+                    <span>x=123,X=一二三</span>
+                    <div class="border1">
+                        <span>begins at</span>
+                        <input id="add-number-begin-at-input" type="number" value="1">
+                    </div>
+                </div>
+            </div>
+            <div class="wrap-class">
+                <div>
+                    <h5>Wrap:</h5>
+                </div>
+                <div>
+                    <select id="wrap-select">
+                        <option value="fixed-line-length">fixed line length</option>
+                        <option value="fixed-line-count">fixed line count</option>
+                    </select>
+                    <span>value:</span>
+                    <input id="wrap-input" class="inputclass1" type="number" value="20">
+                </div>
+                <div>
+                    <button type="button" class="btnclass1" onclick="wrap_chinese()">Chinese style</button>
+                </div>
+            </div>
+            <div>
+                <select id="rlibw-select-1">
+                    <option value="remove">remove</option>
+                    <option value="retain">retain</option>
+                </select>
+                <button type="button" class="btnclass1" onclick="rlibw()">line if</button>
+                <select id="rlibw-select-2">
+                    <option value="b">begins</option>
+                    <option value="e">ends</option>
+                </select>
+                <span>with</span>
+                <input id="rlibw-input" class="inputclass1">
+                <label>
+                    <input id="rlibw-cb" type="checkbox" value="">
+                    re
+                </label>
+            </div>
+            <div>
+                <button type="button" class="btnclass1" onclick="extract_re()">extract (re)</button>
+                <input id="extract-input" class="inputclass1">
+            </div>
+            <div class="atilx-class">
+                <div>
+                    <button type="button" class="btnclass1" onclick="add_text_if_line_xxx()">add</button>
+                    <input id="atilx-input-1" class="inputclass1" value="'\n' // JS code here">
+                    <span>if line</span>
+                    <select id="atilx-select-1">
+                        <option value="b">begins with</option>
+                        <option value="e">ends with</option>
+                    </select>
+                    <input id="atilx-input-2" class="inputclass1" value=".">
+                </div>
+                <div>
+                    <select id="atilx-select-2">
+                        <option value="after">after</option>
+                        <option value="before">before</option>
+                    </select>
+                    <span>that line</span>
+                    <label>
+                        <input id="atilx-cb" type="checkbox" value="">
+                        re
+                    </label>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
