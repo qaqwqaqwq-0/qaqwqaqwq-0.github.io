@@ -280,10 +280,10 @@ function get_add_number_str(fmt, i)
     {
         function num_to_chinese(n)
         {
-            return 'ÁãÒ»¶şÈıËÄÎåÁùÆß°Ë¾Å'[n];
+            return 'é›¶ä¸€äºŒä¸‰å››äº”å…­ä¸ƒå…«ä¹'[n];
         }
         let strnum = num.toString();
-        let units = 'Ê®°ÙÇ§ÍòÊ®°ÙÇ§ÍòÒÚÊ®°ÙÇ§';
+        let units = 'åç™¾åƒä¸‡åç™¾åƒä¸‡äº¿åç™¾åƒ';
         let result = ['@'];
         let unitno = 0;
         for(let i = strnum.length - 1; i >= 0; --i)
@@ -294,12 +294,12 @@ function get_add_number_str(fmt, i)
             unitno++;
         }
         let r = result.join('')
-                      .replace(/(Áã[Ç§°ÙÊ®]){1,3}/g, 'Áã')
-                      .replace(/Áã{2,}/g, 'Áã')
-                      .replace(/Áã([ÍòÒÚ])/g, '$1')
-                      .replace(/ÒÚÍò/g, 'ÒÚ')
-                      .replace(/Áã*@/g, '');
-        if(num < 20) return r.replaceAll('Ò»Ê®', 'Ê®');
+                      .replace(/(é›¶[åƒç™¾å]){1,3}/g, 'é›¶')
+                      .replace(/é›¶{2,}/g, 'é›¶')
+                      .replace(/é›¶([ä¸‡äº¿])/g, '$1')
+                      .replace(/äº¿ä¸‡/g, 'äº¿')
+                      .replace(/é›¶*@/g, '');
+        if(num < 20) return r.replaceAll('ä¸€å', 'å');
         else return r;
     }
     return fmt.replaceAll('x', i.toString()).
