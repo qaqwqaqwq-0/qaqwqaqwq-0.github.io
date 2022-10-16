@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="normalize.css">
+        <link rel="stylesheet" href="textman.css">
+        <link rel="stylesheet" href="codemirror(modified).css">
+        <script type="text/javascript" src="jquery.min.js"></script>
+        <script type="text/javascript" src="codemirror.js"></script>
+        <script type="text/javascript" src="textman.js"></script>
+        <script type="text/javascript" src="textfmt.js"></script>
+        <title>Text Formatter</title>
+    </head>
+    <body>
+        <div id="div-left">
+            <textarea id="text"></textarea>
+        </div>
+        <div id="div-right">
+            <div>
+                <button type="button" class="btnclass1" onclick="do_copy()">copy all</button>
+                <button type="button" class="btnclass1" onclick="do_fmt_generate()">generate</button>
+                <label>
+                    <input id="fmt-js-code" type="checkbox" value="">
+                    js code
+                </label>
+            </div>
+            <div>
+                <span>Format (e.g. \frac{%1}{%2}):</span>
+            </div>
+            <div style="width: 42vw; height: 30vh;">
+                <textarea id="text-fmt-format"></textarea>
+            </div>
+            <div>
+                <span>
+                    Argument list<br>
+                    (if js, provide an array of array of strings (remember ',' before end of line);<br>
+                    otherwise, separated with space and '\n'):
+                </span>
+            </div>
+            <div style="width: 42vw; height: 46vh;">
+                <textarea id="text-fmt-arglist"></textarea>
+            </div>
+        </div>
+    </body>
+</html>
