@@ -35,9 +35,10 @@ $(document).ready(() =>
 function generate_line(format, args)
 {
     let res = format;
-    for(let i = 0; i < args.length; ++i)
+    for(let i = args.length; i >= 0; --i)
+        // becuase %1 is a prefix of %10
     {
-        res = res.replace('%' + (i + 1), args[i]);
+        res = res.replaceAll('%' + (i + 1), args[i]);
     }
     return res;
 }
@@ -60,7 +61,7 @@ function do_fmt_generate()
         }
         catch(e)
         {
-            set(new String(e));
+            set(e.toString());
         }
     }
     else
@@ -71,7 +72,7 @@ function do_fmt_generate()
             let al = arglist.split('\n');
             al.forEach(args =>
                 {
-                    l.push(generate_line(format, args.split(' ')));
+                    l.push(generate_line(format, args.split(/\s+/g)));
                 });
             set(l.join('\n'));
         }
