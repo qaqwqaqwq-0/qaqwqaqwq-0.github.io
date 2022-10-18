@@ -45,6 +45,15 @@ function generate_line(format, args)
 
 function do_fmt_generate()
 {
+    let delim = null;
+    try
+    {
+        delim = eval($("#fmt-delimiter-input").val());
+    }
+    catch(e)
+    {
+        delim = e.toString();
+    }
     let format = textfmt_format_codemirror_editor.getValue('\n');
     let arglist = textfmt_arglist_codemirror_editor.getValue('\n');
     if(document.getElementById('fmt-js-code').checked)
@@ -57,7 +66,7 @@ function do_fmt_generate()
                 {
                     l.push(generate_line(format, args));
                 });
-            set(l.join('\n'));
+            set(l.join(delim));
         }
         catch(e)
         {
@@ -74,11 +83,11 @@ function do_fmt_generate()
                 {
                     l.push(generate_line(format, args.split(/\s+/g)));
                 });
-            set(l.join('\n'));
+            set(l.join(delim));
         }
         catch(e)
         {
-            set(new String(e));
+            set(e.toString());
         }
     }
 }
