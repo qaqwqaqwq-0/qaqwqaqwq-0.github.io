@@ -32,6 +32,11 @@ $(document).ready(() =>
     textfmt_arglist_codemirror_editor.setSize('100%', '100%');
 });
 
+function fmt_get_delim()
+{
+    return eval($("#fmt-delimiter-input").val());
+}
+
 function generate_line(format, args)
 {
     let res = format;
@@ -48,11 +53,12 @@ function do_fmt_generate()
     let delim = null;
     try
     {
-        delim = eval($("#fmt-delimiter-input").val());
+        delim = fmt_get_delim();
     }
     catch(e)
     {
-        delim = e.toString();
+        set(e.toString());
+        return;
     }
     let format = textfmt_format_codemirror_editor.getValue('\n');
     let arglist = textfmt_arglist_codemirror_editor.getValue('\n');
@@ -84,6 +90,66 @@ function do_fmt_generate()
                     l.push(generate_line(format, args.split(/\s+/g)));
                 });
             set(l.join(delim));
+        }
+        catch(e)
+        {
+            set(e.toString());
+        }
+    }
+}
+
+function fmt_set_arglist(s)
+{
+    textfmt_arglist_codemirror_editor.setValue(s.toString());
+}
+
+function do_fmt_split()
+{
+    let delim = null;
+    try
+    {
+        delim = fmt_get_delim();
+    }
+    catch(e)
+    {
+        set(e.toString());
+        return;
+    }
+    if(document.getElementById('fmt-js-code').checked)
+    {
+        try
+        {
+            let l = '[\n';
+            let w = lines();
+            for(let p = 0; p < w.length; ++p)
+            {
+                if(p != 0) l += ',\n';
+                l += '    [';
+                let u = w[p].split(delim);
+                for(let i = 0; i < u.length; ++i)
+                {
+                    if(i != 0) l += ', ';
+                    l += "'" + u[i] + "'";
+                }
+                l += ']';
+            }
+            l += '\n]';
+            fmt_set_arglist(l);
+        }
+        catch(e)
+        {
+            set(e.toString());
+        }
+    }
+    else
+    {
+        try
+        {
+            let l = for_each_line(s =>
+                {
+                    return s.split(delim).join(' ');
+                });
+            fmt_set_arglist(l.join('\n'));
         }
         catch(e)
         {

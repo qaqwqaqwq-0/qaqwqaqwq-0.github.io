@@ -19,12 +19,18 @@
             <div>
                 <button type="button" class="btnclass1" onclick="do_copy()">copy all</button>
                 <button type="button" class="btnclass1" onclick="do_fmt_generate()">generate</button>
+                <button type="button" class="btnclass1" onclick="do_fmt_split()">split</button>
                 <label>
                     <input id="fmt-js-code" type="checkbox" value="">
                     js code
                 </label>
                 <span>| delimiter:</span>
-                <input id="fmt-delimiter-input" class="inputclass1" value="'\n' // JS code here">
+                <input id="fmt-delimiter-input" class="inputclass1" value="'\n' // JS code here"
+                    list="delim-list" style="width: 13vw;">
+                <datalist id="delim-list">
+                    <option value="'\n' // JS code here">
+                    <option value="/\s+/g // JS code here">
+                </datalist>
             </div>
             <div>
                 <span>Format (e.g. \frac{%1}{%2}):</span>
@@ -36,7 +42,7 @@
                 <span>
                     Argument list:<br>
                     (if js, provide an array of array of strings (remember ',' before end of line);<br>
-                    otherwise, separated with /\d+/g and '\n')
+                    otherwise, separated with /\s+/g and '\n')
                 </span>
             </div>
             <div style="width: 42vw; height: 46vh;">
