@@ -129,7 +129,7 @@ function do_fmt_split()
                 for(let i = 0; i < u.length; ++i)
                 {
                     if(i != 0) l += ', ';
-                    l += "'" + u[i] + "'";
+                    l += JSON.stringify(u[i]);
                 }
                 l += ']';
             }
