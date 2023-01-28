@@ -456,6 +456,5 @@ function add_text_if_line_xxx()
             }
             res.push(s);
         });
-    alert(res);
     set(res.join('\n'));
 }
