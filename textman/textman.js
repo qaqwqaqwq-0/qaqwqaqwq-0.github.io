@@ -110,6 +110,26 @@ function string_ends_with(s, t)
     }
 }
 
+function string_contains(s, t)
+{
+    if(typeof t == 'string') return s.includes(t);
+    else return s.search(t) != -1;
+}
+
+function get_string_op_func_map()
+{
+    return {
+        'b': string_begins_with,
+        'e': string_ends_with,
+        'c': string_contains,
+    };
+}
+
+function get_string_op(o)
+{
+    return get_string_op_func_map()[o];
+}
+
 function get_trim()
 {
     return parseInt($("#trim-input").val());
@@ -302,8 +322,8 @@ function get_add_number_str(fmt, i)
         if(num < 20) return r.replaceAll('一十', '十');
         else return r;
     }
-    return fmt.replaceAll('x', i.toString()).
-               replaceAll('X', to_chinese_number(i));
+    return fmt.replaceAll('x', i.toString())
+              .replaceAll('X', to_chinese_number(i));
 }
 
 function get_number_begin_at()
@@ -402,7 +422,7 @@ function rlibw()
     let v = get_rlibw_value();
     if(checked("rlibw")) v = RegExp(v, "g");
     let r = new Array();
-    let func = ($("#rlibw-select-2").val() == 'b') ? string_begins_with : string_ends_with;
+    let func = get_string_op($("#rlibw-select-2").val());
     let bl = ($("#rlibw-select-1").val() == 'retain');
     for_each_line(s =>
         {
@@ -426,27 +446,12 @@ function extract_re()
 function add_text_if_line_xxx()
 {
     let to_add = eval($("#atilx-input-1").val());
-    let b_e = $("#atilx-select-1").val();
+    let string_op = $("#atilx-select-1").val();
     let pattern = $("#atilx-input-2").val();
     let a_b = $("#atilx-select-2").val();
     if(checked("atilx")) pattern = RegExp(pattern, "g");
     let res = new Array();
-    let sat = null;
-    switch(b_e)
-    {
-        case 'b':
-        {
-            sat = (s => string_begins_with(s, pattern));
-            break;
-        }
-        case 'e':
-        {
-            sat = (s => string_ends_with(s, pattern));
-            break;
-        }
-        default:
-            break;
-    };
+    let sat = (s => get_string_op(string_op)(s, pattern));
     for_each_line(s =>
         {
             if(sat(s))
